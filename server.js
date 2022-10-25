@@ -32,11 +32,8 @@ app.get("/realtime-price", function (req, res) {
     "Cache-Control": "no-cache",
   });
   setInterval(() => {
-    res.write("event: realtime-price-event \\n");
-    res.write("id: 0 \\n");
-    res.write("type: realtime-price-type \\n");
     res.write("data:" + JSON.stringify({ ...stocks[getRandomStock()], price: getRandomPrice() }));
-    res.write("\\n\\n");
+    res.write("\n\n");
   }, 10000);
 });
 
