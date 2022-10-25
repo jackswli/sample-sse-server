@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 app.use(cors());
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 const stocks = [
   { id: 1, ticker: "AAPL", price: 497.48 },
   { id: 2, ticker: "MSFT", price: 213.02 },
